@@ -12,16 +12,37 @@ class User {
     String gender = "Male"
     BigDecimal balance
     List<Product> purchasedProducts = []
+
+
     Boolean isPrivellegedCustomer
     BigDecimal incomePerMonth
 
     String getFullName() {
-        return firstName + " " + lastName
+        if(((firstName=="")||(lastName==""))||((firstName==null)||(lastName==null)))
+        {
+            return null
+        }
+        else {
+            return firstName + " " + lastName
+        }
     }
 
     String displayName() {
-        String prefix = (gender == "Male") ? 'Mr' : 'Ms'
-        return prefix + fullName
+        String prefix
+        if(gender == "Male")
+        {
+            return 'Mr'+ fullName
+
+        }
+        else if(gender == "Female")
+        {
+            return 'Ms'+ fullName
+        }
+        else
+        {
+            return null
+        }
+
     }
 
     Boolean isValidPassword(String pwd) {
@@ -32,7 +53,7 @@ class User {
         return isValid
     }
 
-    String resetPasswordAndSendEmail() {
+    void resetPasswordAndSendEmail() {
         String newPassword = "dummy"
         this.password = encyryptPassword(newPassword)
         emailService.sendCancellationEmail(this, newPassword)
@@ -44,6 +65,7 @@ class User {
         if (this.isValidPassword(pwd)) {
             encryptedPassword = passwordEncrypterService.encrypt(pwd)
         }
+        println encryptedPassword
         return encryptedPassword
     }
 
@@ -52,7 +74,7 @@ class User {
         String group
         if (this.incomePerMonth <= 5000) {
             group = "MiddleClass"
-        } else if (incomePerMonth > 5000 && incomePerMonth <= 1000) {
+        } else if (incomePerMonth > 5000 && incomePerMonth <= 10000) {
             group = "Higher MiddleClass"
         } else if (incomePerMonth > 10000) {
             group = "Higher MiddleClass"
@@ -73,13 +95,6 @@ class User {
         }
     }
 
-    List<String>getSortedInterestedInCategories(){
-        List<String> interestedInCategories = getInterestedInCategories()
-        interestedInCategories.sort()
-    }
 
-    List<String>getInterestedInCategories(){    //assumed to be a very complex method
-        sleep(10000)
-    }
 
 }

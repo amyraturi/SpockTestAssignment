@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.im.test.UserSpec" tests="8" skipped="0" failures="0" errors="0" timestamp="2016-02-10T04:23:56" hostname="amit" time="0.253">
+  <properties/>
+  <testcase name="test Get Full Name" classname="com.im.test.UserSpec" time="0.09"/>
+  <testcase name="display Name with gender" classname="com.im.test.UserSpec" time="0.003"/>
+  <testcase name="Validating Password" classname="com.im.test.UserSpec" time="0.003"/>
+  <testcase name="Reset Password And SendEmail" classname="com.im.test.UserSpec" time="0.085"/>
+  <testcase name="encyrypt Password" classname="com.im.test.UserSpec" time="0.017"/>
+  <testcase name="Income Group" classname="com.im.test.UserSpec" time="0.007"/>
+  <testcase name="Purchase" classname="com.im.test.UserSpec" time="0.046"/>
+  <testcase name="cancel Purchase" classname="com.im.test.UserSpec" time="0.002"/>
+  <system-out><![CDATA[null
+null
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
